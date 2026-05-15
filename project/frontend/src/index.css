@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-text-main font-sans antialiased overflow-x-hidden;
+  }
+}
+
+@layer components {
+  /* Dynamic Glassmorphism effects */
+  .glass {
+    @apply bg-surface/40 backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl transition-all duration-500 hover:border-white/20 hover:shadow-primary/20;
+  }
+
+  /* Core transition effects based on user samples */
+  .transition-geometric {
+    @apply transition-all duration-700 cubic-bezier(0.7, 0, 0.3, 1);
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white font-semibold py-3 px-8 rounded-full shadow-lg shadow-primary/20 transition-all duration-300 hover:scale-105 hover:bg-primary/90 active:scale-95 disabled:opacity-50;
+  }
+
+  .btn-accent {
+      @apply bg-accent-gold text-background font-bold py-3 px-8 rounded-full shadow-lg shadow-accent-gold/20 transition-all duration-300 hover:scale-105 hover:bg-accent-gold/90 active:scale-95;
+  }
+
+  /* Custom 3D animations from GitHub Logic */
+  .animate-geometric-scale {
+    animation: geom-scale 0.8s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+  }
+
+  @keyframes geom-scale {
+    0% { transform: scale3d(1, 0, 1); transform-origin: top; }
+    100% { transform: scale3d(1, 1, 1); transform-origin: top; }
+  }
+
+  .animate-ripple-pulse {
+    @apply relative overflow-hidden;
+  }
+
+  .animate-ripple-pulse::after {
+    content: "";
+    @apply absolute inset-0 rounded-full border-2 border-accent-cyan opacity-0 pointer-events-none;
+    animation: ripple 2s infinite ease-out;
+  }
+}
+
+  /* 3D Depth Utilities */
+  .depth-1 { @apply shadow-[0_4px_24px_rgba(0,0,0,0.5)] border border-white/5; }
+  .depth-2 { @apply shadow-[0_8px_32px_rgba(0,0,0,0.6)] border border-white/10; }
+  .depth-3 { @apply shadow-[0_16px_48px_rgba(0,0,0,0.8)] border border-white/20; }
+
+  .perspective-1000 { perspective: 1000px; }
+  .preserve-3d { transform-style: preserve-3d; }
+  .backface-hidden { backface-visibility: hidden; }
+
+/* Layer Tokens */
+:root {
+  --z-background: -10;
+  --z-base: 0;
+  --z-card: 10;
+  --z-header: 50;
+  --z-dropdown: 60;
+  --z-modal: 100;
+  --z-toast: 200;
+}
+
+/* Custom 3D Card Hover */
+.hover-3d {
+  @apply transition-transform duration-500 ease-out;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+}
+.hover-3d:hover {
+  transform: perspective(1000px) rotateX(2deg) rotateY(2deg) scale(1.01);
+}
+
+/* Scrollbar styling for consistent look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-surface border-4 border-background rounded-full hover:bg-border;
+}
+
+/* Selection color */
+::selection {
+  @apply bg-primary/30 text-accent-cyan;
+}
+
+/* Hard-lock scientific visualization chart dimensions and disable any visual growth. */
+.chart-fixed-shell {
+  width: 378px;
+  height: 378px;
+  min-width: 378px;
+  min-height: 378px;
+  max-width: 378px;
+  max-height: 378px;
+  overflow: hidden;
+}
+
+.chart-fixed-shell canvas {
+  width: 378px !important;
+  height: 378px !important;
+  min-width: 378px !important;
+  min-height: 378px !important;
+  max-width: 378px !important;
+  max-height: 378px !important;
+  transform: none !important;
+  transition: none !important;
+}

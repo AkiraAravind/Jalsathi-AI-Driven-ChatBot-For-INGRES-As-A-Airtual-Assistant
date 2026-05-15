@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: project/backend/Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+      - project/.env
+    environment:
+      - SUPABASE_URL=http://supabase_kong_INGRES_TBP:8000
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - MAIL_PASSWORD=${MAIL_PASSWORD}
+    volumes:
+      - ./project/backend:/app/project/backend
+      - hf_cache:/root/.cache/huggingface
+    networks:
+      - default
+      - supabase_net
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./project/frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    depends_on:
+      - backend
+
+volumes:
+  supabase_data:
+  hf_cache:
+
+networks:
+  default:
+  supabase_net:
+    external: true
+    name: supabase_network_INGRES_TBP

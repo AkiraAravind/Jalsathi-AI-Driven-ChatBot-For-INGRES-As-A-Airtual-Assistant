@@ -1,0 +1,141 @@
+{
+  "files_processed": 231,
+  "rows_total": 199829,
+  "rows_inserted": 41844,
+  "rows_skipped": 88463,
+  "rows_errored": 0,
+  "top_missing": [
+    {
+      "field": "stage_pct_total",
+      "count": 89209
+    },
+    {
+      "field": "allocation_domestic_total",
+      "count": 1844
+    },
+    {
+      "field": "unconfined_instorage_fresh",
+      "count": 1624
+    },
+    {
+      "field": "net_availability_total",
+      "count": 1375
+    },
+    {
+      "field": "categorization_raw",
+      "count": 359
+    },
+    {
+      "field": "total_annual_gw_recharge_total",
+      "count": 356
+    },
+    {
+      "field": "natural_discharges_total",
+      "count": 356
+    },
+    {
+      "field": "aegr_total",
+      "count": 356
+    },
+    {
+      "field": "extraction_irrigation_total",
+      "count": 356
+    },
+    {
+      "field": "extraction_industrial_total",
+      "count": 356
+    },
+    {
+      "field": "extraction_domestic_total",
+      "count": 356
+    },
+    {
+      "field": "total_extraction_total",
+      "count": 356
+    },
+    {
+      "field": "aquifer_code",
+      "count": 356
+    },
+    {
+      "field": "sl_no",
+      "count": 5
+    },
+    {
+      "field": "state_code",
+      "count": 5
+    },
+    {
+      "field": "district_code",
+      "count": 5
+    },
+    {
+      "field": "assessment_unit_code",
+      "count": 5
+    },
+    {
+      "field": "state",
+      "count": 5
+    },
+    {
+      "field": "district",
+      "count": 5
+    },
+    {
+      "field": "assessment_unit",
+      "count": 5
+    }
+  ],
+  "column_drift_count": 0,
+  "states_covered": [
+    "TELANGANA",
+    "CHANDIGARH",
+    "TAMILNADU",
+    "BIHAR",
+    "HARYANA",
+    "GOA",
+    "MAHARASHTRA",
+    "NAGALAND",
+    "JAMMU AND KASHMIR",
+    "MANIPUR",
+    "KARNATAKA",
+    "PUDUCHERRY",
+    "MADHYA PRADESH",
+    "JHARKHAND",
+    "SIKKIM",
+    "GUJARAT",
+    "CHHATTISGARH",
+    "WEST BENGAL",
+    "HIMACHAL PRADESH",
+    "ODISHA",
+    "TRIPURA",
+    "DELHI",
+    "DADRA AND NAGAR HAVELI",
+    "ANDAMAN AND NICOBAR ISLANDS",
+    "MEGHALAYA",
+    "LAKSHDWEEP",
+    "UTTAR PRADESH",
+    "DAMAN AND DIU",
+    "ARUNACHAL PRADESH",
+    "KERALA",
+    "ASSAM",
+    "ANDHRA PRADESH",
+    "MIZORAM",
+    "PUNJAB",
+    "UTTARAKHAND",
+    "RAJASTHAN",
+    "LADAKH"
+  ],
+  "errors_sample": [
+    "Embedding attr attributeReport1774715604037.xlsx: CUDA error: an illegal instruction was encountered\nSearch for `cudaErrorIllegalInstruction' in https",
+    "Upsert annexure_block_risk: {'message': 'duplicate key value violates unique constraint \"annexure_block_risk_state_district_bloc",
+    "Upsert annexure_block_risk: {'message': 'duplicate key value violates unique constraint \"annexure_block_risk_state_district_bloc",
+    "Upsert annexure_block_risk: {'message': 'duplicate key value violates unique constraint \"annexure_block_risk_state_district_bloc",
+    "Upsert annexure_block_risk: {'message': 'duplicate key value violates unique constraint \"annexure_block_risk_state_district_bloc",
+    "Upsert annexure_block_risk: {'message': 'duplicate key value violates unique constraint \"annexure_block_risk_state_district_bloc",
+    "Upsert annexure_block_risk: {'message': 'duplicate key value violates unique constraint \"annexure_block_risk_state_district_bloc",
+    "Upsert annexure_block_risk: {'message': 'duplicate key value violates unique constraint \"annexure_block_risk_state_district_bloc",
+    "Upsert annexure_block_risk: {'message': 'duplicate key value violates unique constraint \"annexure_block_risk_state_district_bloc",
+    "Upsert annexure_block_risk: {'message': 'duplicate key value violates unique constraint \"annexure_block_risk_state_district_bloc"
+  ]
+}

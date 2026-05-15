@@ -1,0 +1,94 @@
+================================================================================
+                     INGRES AI PROJECT - ARCHITECTURE & UML DETAILS
+================================================================================
+
+1. PROJECT OVERVIEW
+-------------------
+Project Name: INGRES AI Command Center (Intelligent Groundwater Retrieval & Exploration System)
+Description: A web-based intelligent hydrological control center designed for the Central Ground Water Board (CGWB) and State Ground Water Departments (SGWD). The platform relies on a combination of Supabase for relational and vector storage, FastAPI for backend orchestration, and React (React Router, Vite, TailwindCSS) for a highly secure, modern "command portal" front-end. It features advanced RAG (Retrieval-Augmented Generation) driven by Google's Gemini Flash LLM to answer complex multi-lingual groundwater queries based on dynamic, persistent data and document uploads.
+
+2. CORE ACTORS
+--------------
+a) General User / Citizen:
+   - Primary role: Standard access.
+   - Permissions: Can access the basic dashboard, view information, interact with the generic chatbot, and upload simple contextual documents for AI analysis.
+   - Limitations: Cannot view the Government Portal metrics, restricted from seeing "GEC-2015" actual node telemetry.
+
+b) Government Official (Admin/Official):
+   - Primary role: Administrative access to sensitive regional data and dynamic intelligence metrics.
+   - Permissions: Full platform access, including the Government Portal ("/portal") showing national extraction trends, at-risk block alerts, and live reporting metrics. Can fetch the persistent chat transcript via PDF generation securely.
+
+c) AI Assistant (Gemini LLM):
+   - Primary role: Data reasoning, extraction, and interaction. Processes user questions, understands file uploads, generates formatted answers (MD/graphs), translates outputs, and cites internal knowledge vectors.
+
+3. KEY MODULES & COMPONENTS
+---------------------------
+A) Frontend (React / Vite):
+   - Routing: React-Router-DOM (/, /login, /register, /portal, /dashboard).
+   - Dashboard (Dashboard.tsx): Command Center UI holding Chat Interface and Auth protections.
+   - Auth Modules (Login.tsx, PortalRegister.tsx, VerifyOTP.tsx): JWT OTP password-less authentication loop.
+   - Chat System (ChatInterface.tsx): Renders AI responses, tracks history, allows multi-modal uploads (PDF/TXT), requests PDF reports.
+   - API Service (api.ts): Centralized Axios instance pointing to FastAPI routes.
+
+B) Backend (FastAPI / Python):
+   - main.py: API hub. Manages CORS, initializes endpoints (`/api/auth/*`, `/api/chat/*`), mounts Supabase clients, and protects endpoints with JWT dependency checks.
+   - auth_utils.py: Houses JWT mechanics (`create_access_token`, `verify_token`), OTP generation, and SMTP (`reportlab`) mail dispatches. 
+   - rag_engine.py: Houses `INGRESChatEngine`. Uses LlamaIndex / Gemini APIs for Vector Extraction querying and building context arrays out of the user's files and persistent chat instances.
+   - pdf_utils.py: Synthesizes structured PDF transcripts from chat arrays using ReportLab.
+
+C) Database & Vector Engine (Supabase / Postgres):
+   - Tables:
+      1) `users`: (id, email, name, department, designation, district, role, created_at)
+      2) `chat_history`: (id, session_id, user_email, query, response, metadata, created_at)
+      3) `gw_reports_vector` (assuming standard pgvector table for RAG contexts)
+
+4. PRIMARY USE CASES (For Use Case Diagram)
+-------------------------------------------
+1. Secure Login flow via Email OTP (Passwordless).
+2. Government Profile Registration & Verification.
+3. Chatting with the Hydrological AI (Text & Image queries).
+4. Uploading personal PDF/TXT files to inject local context into the Agent's pipeline.
+5. Exporting an official PDF transcript of an active session to the registered e-mail.
+6. Accessing dynamic "National Extraction" & "At-Risk Block" metrics securely via the Government Portal.
+
+5. TYPICAL SEQUENCE METRICS (For Sequence / Activity Diagrams)
+--------------------------------------------------------------
+* Scenario A: Logging into the System
+  User -> Enters Email in Login Portal -> Frontend calls POST `/api/auth/login`.
+  Backend -> Queries `users` DB -> If found, generates 6-digit OTP -> Sends Email via SMTP -> Returns Success.
+  User -> Receives Email -> Enters OTP on `/verify-otp` -> Frontend calls POST `/api/auth/verify`.
+  Backend -> Validates OTP -> Returns JWT + Name + Role.
+  Frontend -> Saves locally (`localStorage`) -> Fires `profileUpdated` event -> Routes to `/dashboard`.
+
+* Scenario B: Sending an AI Query with an Uploaded File
+  User -> Clicks "Upload", attaches PDF.
+  Frontend -> POST `/api/chat/upload` as multi-part form.
+  Backend (PyMuPDF) -> Extracts text -> Returns `extracted_context`.
+  Frontend -> Attaches `extracted_context` + User Message to POST `/api/chat`.
+  Backend (`main.py`) -> Validates JWT -> Invokes `rag_engine.chat()`.
+  RAG Engine -> Builds prompt containing constraints, file context, and history -> Hits Gemini API -> Receives Answer.
+  Backend -> Saves query/answer to `chat_history` DB -> Returns response dict.
+  Frontend -> Renders Markdown response -> Saves Session dynamically.
+
+* Scenario C: Generating a PDF Chat Report
+  Official User -> Clicks "Export PDF".
+  Frontend -> POST `/api/chat/export` passing `session_id`.
+  Backend -> Retrieves all `chat_history` for `session_id`.
+  Backend (`pdf_utils.py`) -> Builds a stylized ReportLab Document buffer.
+  Backend (`auth_utils.py`) -> Emails PDF via BackgroundTask to the User's verified email.
+  Frontend -> Alerts user of success.
+
+6. DEPLOYMENT STRUCTURE (For Deployment Diagram)
+------------------------------------------------
+- Client Node: Web Browser (Chrome/Edge/Safari) running compiled React JS + HTML5.
+- Front-End Container Node: NGINX Server (Port 80 mapped to 3000 locally), serving Vite static artifacts. Networked via Docker.
+- Back-End Container Node: Uvicorn/FastAPI Server (Python 3.11, Port 8000). Handles dynamic business logic, RAG generation, and SMTP.
+- Cloud DB Node: Supabase Platform (PostgreSQL). Holds `users`, `chat_history`, and functions as pgvector database.
+- AI Node: Google Cloud platform processing Gemini-1.5-Flash LLM remote requests via external HTTPS.
+
+7. CLASS / STATE NOTES
+----------------------
+- Important states in Frontend: `isLoading`, `timer` (OTP countdown), `sessionId` (active routing), `sessions` [array of past chats], `liveData` (in Portal for fake real-time tracking).
+- RAG Engine internal methods: `_build_dynamic_prompt()`, `_synthesize_response()`, `_generate_structured_charts()`.
+
+Use this text as the definitive functional specification to generate UML sequence, class, deployment, and entity-relationship diagrams for your presentation pipeline.

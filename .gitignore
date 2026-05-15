@@ -1,0 +1,52 @@
+# ── Environment & Secrets ──
+.env
+.env.local
+.env.local.txt
+project/.env
+
+# ── Python ──
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# ── Node / Frontend ──
+node_modules/
+project/frontend/node_modules/
+project/frontend/dist/
+project/frontend/.vite/
+
+# ── Logs ──
+*.log
+project/scripts/ingestion.log
+
+# ── IDE ──
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── OS ──
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# ── Large binary files ──
+*.zip
+*.docx
+
+# ── Backend exports ──
+project/backend/exports/
+
+# ── Docker ──
+*.pid
+
+# ── Gemini/Antigravity ──
+.gemini/

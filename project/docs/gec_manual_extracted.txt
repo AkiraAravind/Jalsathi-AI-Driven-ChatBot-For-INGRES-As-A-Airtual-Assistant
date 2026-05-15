@@ -1,0 +1,2038 @@
+PAGE 1:
+User Manual
+for
+INDIA GEC Software
+(Automation of Estimation of Dynamic
+Ground Water Resources using GEC-2015
+methodology and Related Research work
+to improve GEC Assessment)
+Submitted by
+Department of Civil Engineering, IIT Hyderabad
+(Technical Partner: Vassar Labs IT Solutions, Hyderabad)
+Submitted to
+Central Ground Water Board,
+Department of Water Resources, RD & GR
+Ministry of Jal Shakti, Government of India
+May, 2020
+I
+
+PAGE 2:
+Table of Contents
+1.0 Introduction 1
+2.0 Methodology Used 2
+2.1 Ground Water Recharge 4
+2.1.1 Annual Rainfall Recharge 4
+2.1.2 Recharge from Other Sources – Ground Water Irrigation 7
+2.1.3 Recharge from Other Sources - Surface Water Irrigation 8
+2.1.4 Recharge from Other Sources - Canal Seepage 9
+2.1.5 Recharge from Other Sources - Tanks and Ponds 10
+2.1.6 Recharge from Other Sources - Water Conservation Structures 11
+2.1.7 Recharge from Other Sources – Stream Channels 12
+2.1.8 Recharge from Other Sources - Pipelines 12
+2.1.9 Recharge from Other Sources - Sewage/Flash floods 13
+2.2 Inflows and Outflows 14
+2.2.1 Vertical Inter Aquifer Flow 14
+2.2.2 Lateral flow along the aquifer system (throughflow) 14
+2.2.3 Transpiration 15
+2.2.4 Evaporation 16
+2.2.5 Evapotranspiration 16
+2.2.6 Baseflow 17
+2.2.7 Environmental Flows 17
+2.3 Annual Extractable Ground Water Resource 18
+2.4 Ground Water Extraction 18
+2.4.1 Extraction for Domestic Use 19
+2.4.2 Extraction for Irrigation Use 20
+2.4.3 Extraction for Industrial Use 21
+2.5 Stage of Ground Water Extraction (%) 22
+2.6 Categorization of the Assessment Unit 22
+2.7 Allocation of Ground Water Resource for Utilization 23
+2.8 Net Annual Ground Water Availability 23
+2.9 In-Storage Unconfined Ground Water Resources 24
+2.10In-Storage Confined Aquifer Water Resources 25
+2.11Dynamic Confined Aquifer Water Resources 27
+2.12In-Storage Semi-Confined Aquifer Water Resources 28
+2.13Dynamic Semi-Confined Aquifer Water Resources 29
+2.14Quality Tagging 30
+2.15Additional Potential Resource 30
+2.15.1 Spring Discharge 30
+2.15.2 Waterlogged areas and shallow water table 30
+2.15.3 Flood Prone 31
+2.16Coastal Areas 32
+2.17Water Depletion Zones 33
+2.18Validation using GW 33
+2.18.1 Introduction 33
+2.18.2 Mockups 34
+3.0 Input Sheets and Shape File formats 35
+3.1 Excel Download and Upload Templates 35
+II
+
+PAGE 3:
+3.1.1 Basic Data File 35
+3.1.2 Rainfall Data File 36
+3.1.3 Ground Water Well Data File 37
+3.1.4 Recharge Data File 38
+3.1.5 Draft Data File 41
+3.1.6 Inflows and Outflows Data File 43
+3.1.7 Additional Potential Resources Data File 46
+3.1.8 Resources of Confined and Semi-Confined Aquifer Data File 47
+3.1.9 Urban Area Resource – Pipelines and Sewages 47
+3.1.10 Unconfined Dynamic Aquifer Other Details 48
+3.1.11 Coastal Areas 48
+3.1.12 Water Depletion Zones 48
+3.2 Form Inputs 49
+3.2.1 Basic Form Input 49
+3.2.2 Recharge Form input 50
+3.2.3 Draft Form Input 53
+3.2.4 Inflows and Outflows Data File 55
+3.2.5 Additional Potential Resources Form Input 57
+3.2.6 Resources of Confined and Semi-Confined Aquifer Form Input 58
+3.2.7 Unconfined Dynamic Aquifer Other Details 59
+3.2.8 Coastal Areas 60
+3.2.9 Water Depletion Zones 60
+3.3 Shape File format - Pending 61
+4.0 GIS Dashboard / Homepage 62
+4.1 Dashboard – GIS View 62
+4.1.1 Introduction 62
+4.1.2 Map Layers 62
+4.1.3 Features 62
+4.1.4 Mockups 63
+4.2 Heatmap 67
+4.2.1 Categorization 67
+4.2.2 Annual Normal Rainfall 68
+4.2.3 Annual Ground Water Recharge (Unit Map) 69
+4.2.4 Annual Ground Water Extraction (Unit Map) 70
+4.2.5 Aquifer Map 71
+5.0 MIS Dashboard 72
+5.1 Dashboard – MIS View 72
+5.1.1 Introduction 72
+5.1.2 Mockups 72
+5.2 Computational Popup 74
+6.0 Other System Features 76
+6.1 Live Ground Water Dashboard 76
+6.1.1 Introduction 76
+6.1.2 Mockups 76
+6.2 Map comparison 77
+6.2.1 Introduction 77
+6.2.2 Mockups 77
+7.0 Reports 78
+7.1 Central Level Report 78
+7.2 State Level Report 79
+III
+
+PAGE 4:
+7.3 CGWB Format – Annexure 1 – State-wise Resources 80
+7.4 CGWB Format – Annexure 2 – District-wise Resources 82
+7.5 CGWB Format – Annexure 3 – Categorization 83
+7.6 CGWB Format – Annexure 4 – List of Categorization 85
+7.7 Custom Report 87
+8.0 User Logins 88
+8.1 Introduction 88
+8.2 Field User Login 90
+8.2.1 Approvals Tab 90
+8.2.2 Excel Download Tab 91
+8.2.3 Excel Upload Tab 91
+8.2.4 Input Form Tab 92
+8.2.5 Trigger Computation Tab 92
+8.2.6 Report Versions Tab 93
+8.3 District Admin Login 93
+8.3.1 Approvals Tab 93
+8.4 State Admin Login 94
+8.4.1 Approvals Tab 94
+8.4.2 Submit to SLC - Approvals Tab 94
+8.4.3 State Basic Data Tab 95
+8.4.4 Data upload Basic Data Tab 95
+8.4.5 Shape File Version Tab 96
+8.5 SLC Admin Login 96
+8.5.1 Approvals Tab 96
+8.6 CGWB Admin Login 97
+8.6.1 Approvals Tab 97
+8.7 CLEG Admin Login 98
+8.7.1 Approvals Tab 98
+8.8 Ministry Admin Login 99
+8.8.1 Approvals Tab 99
+9.0 Approval Levels 100
+10.0 User Journey 101
+10.1Stage 1: Initialize the State 101
+10.2Stage 2: Data Entry and Submit for Approval 102
+10.3Stage 3: Approval Process 105
+10.4Stage 4: Output on GIS and MIS View 108
+11.0 Glossary 110
+12.0 References 111
+IV
+
+PAGE 5:
+Table of Figures and Mockups
+Figure 1: Overview of Ground Water Resource Estimation Platform – GEC 2015 1
+Figure 2: Validation using Ground Water Trend result 34
+Figure 3: Basic Data Template 35
+Figure 4: Aquifer Data Template 35
+Figure 5: Rainfall – Assessment Unit Data Template 36
+Figure 6: Rainfall – Rain Gauge Data Template 36
+Figure 7: Rainfall – IMD Grid Data Template 36
+Figure 8: Rainfall – Time Series Data Template 37
+Figure 9: Rainfall – Threshold Data Template 37
+Figure 10: Ground Water Well – Assessment Unit Data Template 37
+Figure 11: Ground Water Well – Well Data Template 38
+Figure 12: Ground Water Well – Time Series Data Template 38
+Figure 13: Recharge – Surface Water Irrigation – Canal Outlet Template 38
+Figure 14: Recharge – Surface Water Irrigation – Crop Water Requirement Template 39
+Figure 15: Recharge – Canal Seepage Template 39
+Figure 16: Recharge – Tanks and Ponds Template 39
+Figure 17: Recharge – Water Conservation Structure Template 40
+Figure 18: Recharge – Ground Water Irrigation Template 40
+Figure 19: Draft – Domestic Unit Draft Template 41
+Figure 20: Draft – Domestic Consumptive Use Template 41
+Figure 21: Draft – Irrigation Unit Draft Template 42
+Figure 22: Draft – Irrigation Power Consumption Template 42
+Figure 23: Draft – Industrial Unit Draft Template 42
+Figure 24: Draft – Industrial Consumptive Use Template 43
+Figure 25: Environmental Flows – Base Flow Template 43
+Figure 26: Environmental Flows – Base Flow Template 43
+Figure 27: Environmental Flows – Vertical Inter Aquifer Flow Template 44
+Figure 28: Environmental Flows – Lateral Aquifer Flow Template 44
+Figure 29: Environmental Flows – Evapotranspiration Template 44
+Figure 30: Environmental Flows – Evaporation Template 45
+Figure 31: Environmental Flows – Transpiration Template 45
+Figure 32: Environmental Flows – Stream Channels Template 45
+Figure 33: Additional Potential Resources – Shallow Water Area Template 46
+Figure 34: Additional Potential Resources – Flood Prone Area Template 46
+Figure 35: Additional Potential Resources – Spring Discharge Template 46
+Figure 36: Resources of Confined and Semi-Confined Aquifer – Confined Aquifer Template 47
+Figure 37: Resources of Confined and Semi-Confined Aquifer – Semi-Confined Aquifer Template 47
+Figure 38: Urban Area Resource – Pipelines & Sewage Template 47
+Figure 39: Unconfined Dynamic Aquifer Other Details Template 48
+Figure 40: Coastal Areas Template 48
+Figure 41: Water Depletion Zones Template 48
+Figure 42: Basic Data Form Input 49
+Figure 43: Aquifer Data Form Input 49
+Figure 44: Recharge – Surface Water Irrigation – Canal Outlet Form Input 50
+Figure 45: Recharge – Surface Water Irrigation – Crop Water Requirement Form Input 50
+Figure 46: Recharge – Canal Seepage Form Input 51
+Figure 47: Recharge – Tanks and Ponds Form Input 51
+Figure 48: Recharge – Water Conservation Structure Form Input 52
+Figure 49: Recharge – Stream Channels Form Input 52
+Figure 50: Recharge – Ground Water Irrigation Form Input 52
+V
+
+PAGE 6:
+Figure 51: Draft – Unit Draft Form Input 53
+Figure 52: Draft – Domestic Consumptive Use Form Input 53
+Figure 53: Draft – Irrigation Power Consumption Form Input 54
+Figure 54: Draft – Industrial Consumptive Use Form Input 54
+Figure 55: Environmental Flows – Base Flow Form Input 55
+Figure 56: Environmental Flows – Vertical Inter Aquifer Flow Form Input 55
+Figure 57: Environmental Flows – Lateral Aquifer Flow Form Input 56
+Figure 58: Environmental Flows – Evapotranspiration Form Input 56
+Figure 59: Environmental Flows – Evaporation Form Input 56
+Figure 60: Environmental Flows – Transpiration Form Input 57
+Figure 61: Additional Potential Resources – Shallow Water Area Form Input 57
+Figure 62: Additional Potential Resources – Flood Prone Area Form Input 57
+Figure 63: Additional Potential Resources – Spring Discharge Form Input 58
+Figure 64: Resources of Confined and Semi-Confined Aquifer – Confined Aquifer Form Input 58
+Figure 65: Resources of Confined and Semi-Confined Aquifer – Semi-Confined Aquifer Form Input 59
+Figure 66: Unconfined Dynamic Aquifer Other Details Form Input 59
+Figure 67: Coastal Areas Form Input 60
+Figure 68: Water Depletion Zones Form Input 60
+Figure 69: Shape File Attribute Table format 61
+Figure 70: GIS Home Page mockup 63
+Figure 71: GIS View – Map Layers mockup 64
+Figure 72: GIS View – Filters mockup 65
+Figure 73: GIS View – Information Panel mockup 66
+Figure 74: GIS View – Categorization Heatmap 67
+Figure 75: GIS View – Annual Normal Rainfall Heatmap 68
+Figure 76: GIS View – Annual Ground Water Recharge (Unit Map) Heatmap 69
+Figure 77: GIS View – Annual Ground Water Extraction (Unit Map) Heatmap 70
+Figure 78: GIS View – Aquifer Heatmap 71
+Figure 79: MIS View – Dashboard 73
+Figure 80: MIS View – Computation Popup Sample 1 74
+Figure 81: MIS View – Computation Popup Sample 2 75
+Figure 82: Live Ground Water Dashboard mockup 76
+Figure 83: Map Comparison mockup 77
+Figure 84: Central Level Report – Mockup 78
+Figure 85: Central Level Report – Report Format 78
+Figure 86: State Level Report – Mockup 79
+Figure 87: State Level Report – Report Format 79
+Figure 88: Annexure 1 – Mockup 80
+Figure 89: Annexure 1 – State Resources – Report Format 80
+Figure 90: Annexure 1 – Comparison Resources – Report Format 81
+Figure 91: Annexure 2 – Mockup 82
+Figure 92: Annexure 2 – Report Format 82
+Figure 93: Annexure 3 – Mockup 83
+Figure 94: Annexure 3 – Categorization – Report Format 83
+Figure 95: Annexure 3 – Comparison – Report Format 84
+Figure 96: Annexure 4 – Mockup 85
+Figure 97: Annexure 4 – Annexure IV A – Report Format 85
+Figure 98: Annexure 4 – Annexure IV B – Report Format 86
+Figure 99: Annexure 4 – Annexure IV Original – Report Format 86
+Figure 100: Customer Report – Mockup 87
+Figure 101: Pending Approvals Tab 88
+Figure 102: History Tab 88
+VI
+
+PAGE 7:
+Figure 103: View Data – Uploaded Excel Sheets 89
+Figure 104: View Data – Computed Data 89
+Figure 105: View Data - Comments 90
+Figure 106: Field User Login – Approvals Tab 90
+Figure 107: Field User Login – Excel Download Tab 91
+Figure 108: Field User Login – Excel Upload Tab 91
+Figure 109: Field User Login – Input Form Tab 92
+Figure 110: Field User Login – Trigger Computation Tab 92
+Figure 111: Field User Login – Report Versions Tab 93
+Figure 112: District Admin Login – Approvals Tab 93
+Figure 113: State Admin Login – Approvals Tab 94
+Figure 114: State Admin Login – Approvals Tab – Submit to SLC 94
+Figure 115: State Admin Login – State Basic Data Tab 95
+Figure 116: State Admin Login – Data Upload Tab 95
+Figure 117: State Admin Login – Shape File Version Tab 96
+Figure 118: SLC Admin Login – Approvals Tab 96
+Figure 119: SLC Admin Login – Upload Proceedings Popup 97
+Figure 120: CGWB Admin Login – Approvals Tab 97
+Figure 121: CLEG Admin Login – Approvals Tab 98
+Figure 122: CLEG Admin Login – Upload Proceedings Popup 98
+Figure 123: Ministry Admin Login – Approvals Tab 99
+Figure 124: Ministry Admin Login – Upload Proceedings Popup 99
+Figure 125: Approval Levels 100
+Figure 126: User Journey 101
+Figure 127: Shape file Upload 101
+Figure 128: State Data Upload 102
+Figure 129: Excel Download 102
+Figure 130: Excel Upload 103
+Figure 131: Form Input 103
+Figure 132: Trigger Computation 104
+Figure 133: View Data Popup 104
+Figure 134: Pending Approvals 104
+Figure 135: District Admin Approval 105
+Figure 136: State Admin Approval 105
+Figure 137: Submit to SLC 106
+Figure 138: SLC Admin Approval 106
+Figure 139: CGWB Admin Approval 106
+Figure 140: CLEG Admin Approval 107
+Figure 141: Ministry Admin Approval 107
+Figure 142: MIS View 108
+Figure 143: GIS View 108
+Figure 144: Map Download 109
+Figure 145: Report Download 109
+VII
+
+PAGE 8:
+1.0 Introduction
+Ground Water is the backbone of India’s agriculture and drinking water security in urban
+and rural areas. However, it is important to realize that groundwater is not a resource that
+could be utilized indiscriminately. India being a home to more than 1.3 billion people, the
+increasing population, urbanization and non-uniform extraction have accelerated depletion
+of ground water resources. This is reflected in falling ground water levels trends and
+contamination of aquifers. A serious groundwater crisis prevails currently in India due to
+excessive over-extraction and groundwater contamination covering nearly 60 percent of all
+districts in India and posing a risk to drinking water security of the population. In addition to
+over-extraction and biological/chemical contamination of water, excess groundwater and
+water logging is also a serious problem in many regions, impacting livelihood security of
+large sections of society.
+Groundwater estimation committee (GEC) 2015 gives guidelines to classify assessment
+units (largely administrative units such as blocks/talukas/mandals/firkas, and in some cases
+hydrological units such as watersheds/aquifers) into SAFE, SEMI-CRITICAL, CRITICAL
+AND OVEREXPLOITED categories for a region. This classification is based on the
+amounts of Ground Water Recharge, Draft, Flux happened in a particular year.
+India GEC system will take Data Input through Excel as well as through Forms, compute
+various Ground water components (recharge, draft, flux, etc.), classify assessment unit into
+appropriate categories, develop visibility dashboards for each of the components. System
+allows user to view the data in both MIS as well as GIS view. User can also download the
+reports in formats like CGWB, etc.
+Figure 1: Overview of Ground Water Resource Estimation Platform – GEC 2015
+1
+
+PAGE 9:
+2.0 Methodology Used
+The system is based on GEC 2015 methodology for ground water resources estimation for
+3 types of Aquifers: Unconfined Aquifer, Semi-Confined Aquifer and Confined Aquifer. The
+resource estimation for an Unconfined Aquifer is based on the principle of water balance:
+Inflow – Outflow = Change in Storage (of an aquifer)
+This equation can be further elaborated as:
+ΔS= R +R +R +R +R +R +R ±VF ± LF -GE-T-E-B
+RF STR C SWI GWI TP WCS
+Where,
+ΔS – Change is storage
+R – Rainfall recharge
+RF
+R – Recharge from stream channels
+STR
+R – Recharge from canals
+C
+R – Recharge from surface water irrigation
+SWI
+R – Recharge from ground water irrigation
+GWI
+R – Recharge from tanks & ponds
+TP
+R – Recharge from water conservation structures
+WCS
+VF – Vertical inter aquifer flow
+LF – Lateral flow along the aquifer system (throughflow)
+GE – Ground Water Extraction
+T – Transpiration
+E – Evaporation
+B – Base flow
+2
+
+PAGE 10:
+India GEC system is divided into 3 modules – Input, Computation and Output.
+1. Input module – Input Module refers to the Data Entry module at an
+Assessment Unit level. Data Input is done via 2 methods i.e.
+a. Excel based input – In this, the user needs to download District level
+data sheet template where he/she can fill the data at an Assessment
+Unit level. User now needs to upload their fully filled excel sheet into the
+system.
+b. Form based input – In this, the user is shown a form and he/she can
+fill/edit the data in data sheet in an online mode. Once user is done with
+editing online, he/she can Submit the data file.
+2. Computation module – Computation Module refers to the ground water
+calculations for an assessment unit. These computations are based on GEC
+2015 methodology and are used to calculate Annual Extractable Ground Water
+Resource, Total Current Annual Ground Water Extraction (utilization) and the
+percentage of ground water utilization with respect to recharge (stage of Ground
+Water Extraction) for an assessment unit. Based on these percentages an
+assessment unit is categorized into SAFE, SEMI-CRITICAL, CRITICAL AND
+OVEREXPLOITED categories.
+3. Output module Once categorized the data is shown in two views:
+a. MIS Dashboard – MIS dashboard shows the results of the assessment
+for the entire India, and also State wise in tabular form. The MIS
+dashboard shows all type of recharges, extractions, inflows and outflows
+computed for both monsoon and non-monsoon periods of the year and
+then reflect the overall stage of extraction at the selected Geo-Zoom
+Level.
+b. GIS Dashboard – GIS dashboard shows the data in Web Geo-Server
+format, implemented in interactive GIS platform allowing user to all GEC
+related information in the map itself. GIS view represents the data on
+India map and color codes each District/Assessment unit based on the
+categorization.
+3
+
+PAGE 11:
+2.1 Ground Water Recharge
+The Ground Water Recharge for an Unconfined Aquifer is calculated as:
+Recharge = R +R +R +R +R +R +R
+RF STR C SWI GWI TP WCS
+Where,
+R – Rainfall recharge
+RF
+R – Recharge from stream channels
+STR
+R – Recharge from canals
+C
+R – Recharge from surface water irrigation
+SWI
+R – Recharge from ground water irrigation
+GWI
+R – Recharge from tanks & ponds
+TP
+R – Recharge from water conservation structures
+WCS
+2.1.1 Annual Rainfall Recharge
+Introduction
+Monsoon Rainfall is the major source of ground water recharge. About 58% of the annual
+replenishable resources are contributed by monsoon rainfall. This recharge is estimated
+using Ground Water Level Fluctuation method (for Monsoon season only) and Rainfall
+Infiltration Factor method (for both Monsoon and Non-Monsoon). User is allowed to enter
+data at Assessment Unit level, Rain Gauge level data, IMD Grid level, etc.
+Data Elements Used
+Component Parameter Unit
+Rainfall Infiltration Factor
+Rainfall Millimeter
+Method
+Water Table Fluctuation
+Water Level Meter
+Method
+4
+
+PAGE 12:
+Data computation methodology
+The Rainfall Recharge estimations based on Water Level Fluctuation method, reflects
+actual field conditions as it considers the response of ground water level. However, this
+estimation is often subject to uncertainties. In the regions, where adequate data on ground
+water level fluctuations is not available, ground water recharge is estimated using rainfall
+infiltration factor method. Therefore, it is recommended to compare the rainfall recharge
+obtained from water level fluctuation approach with that estimated using rainfall infiltration
+factor method.
+Ground Water Level Fluctuation Method
+The Ground Water Level Fluctuation method is to be used for assessment of rainfall
+recharge in the monsoon season only. It considers following factors for recharge
+calculation:
+ Change in storage
+ Rise/Fall in water level in the monsoon season
+ Specified yield (based on Aquifer Norms)
+R (wtfm) = ((Change in Ground Water Storage + Gross Ground Water Extraction for all
+RF
+uses in Command/Non-Command Area during Monsoon) - Recharge from “Other Sources”
+during Monsoon Season))1000
+Where,
+Change in Ground Water Storage = Rise/Fall in water level in the
+monsoon season * Area * Specific Yield
+Recharge from “Other Sources” = Recharge due to seepage from
+Canals + Recharge from Surface Water Irrigation + Recharge from Ground
+Water Irrigation + Recharge from Tanks and Ponds + Recharge from Water
+Conservation Structures
+Rainfall recharge during monsoon season for normal monsoon rainfall condition, R
+RF
+(Normal, wtfm) is calculated as:
+R (Normal, wtfm) = (Rainfall Recharge * Monsoon Normal Rainfall) / Monsoon Actual
+RF
+Rainfall
+5
+
+PAGE 13:
+Rainfall Infiltration Factor Method
+The Rainfall Infiltration Factor method is used for rainfall recharge assessment in both
+monsoon and non-monsoon season. It considers following factors for recharge calculation:
+ Area
+ RFIF - Rainfall Infiltration Factor (based on Aquifer Norms)
+ Normal Monsoon Rainfall
+R (Normal, rifm) = (Area*(Normal Rainfall during Monsoon-Rainfall threshold) * Rainfall
+RF
+Infiltration Factor)/1000
+Where
+Rainfall Threshold = 10% of annual rainfall
+Method selection for Monsoon
+Once the rainfall recharge is estimated using both the methods, Percent Deviation (PD) is
+calculated. PD is the difference between the two methods i.e. R (wtfm) and R (rifm)
+RF RF
+expressed as a percentage of the R (rifm)
+RF
+PD = (R (Normal, wtfm) - R (Normal, rifm)) / R (Normal, rifm) * 100
+RF RF RF
+Where,
+R (wtfm) = Rainfall Recharge for normal monsoon season rainfall
+RF
+estimated using Water Table Fluctuation method
+R (rifm) = Rainfall Recharge for normal monsoon season rainfall
+RF
+estimated using Rainfall Infiltration Factor method
+The criteria for adoption are:
+ If -20% < PD < +20% Final Rainfall Recharge = R (wtfm)
+rf
+ If PD < -20% Final Rainfall Recharge = R (rifm)* 0.8
+rf
+ If PD > +20% Final Rainfall Recharge = R (rifm)* 1.2
+rf
+6
+
+PAGE 14:
+2.1.2 Recharge from Other Sources – Ground Water Irrigation
+Introduction
+In recharge through ground water irrigation, the ground water which was earlier extracted
+for agricultural irrigation purposes is now contributing to the ground water recharge. This
+recharge is calculated based on the return flow factor for paddy as well as non-paddy
+fields.
+Data Elements Used
+Component Parameter Unit
+Recharge due to Ground
+Cropping Pattern Acres
+Water Irrigation
+Data computation methodology
+Recharge due to applied Ground Water Irrigation is estimated based on the following
+formula:
+R = GD * RFF
+GWI I
+Where:
+R = Recharge due to applied ground water irrigation
+GWI
+GD = Gross Ground Water Draft for Irrigation
+I
+RFF = Return Flow Factor and is calculated as [(Irrigated Area Under
+Paddy * Return Flow Factor for Paddy) + (Irrigated Area Under Non-Paddy *
+Return Flow Factor for Non-Paddy)] / (Irrigated Area Under Paddy +
+Irrigated Area Under Non-Paddy)
+7
+
+PAGE 15:
+2.1.3 Recharge from Other Sources - Surface Water Irrigation
+Introduction
+Surface Water Irrigation is done to irrigate crops through the canal water. This water also
+contributes to ground water recharge and is calculated using Return Flow Factor and
+number of days the water was discharged to fields.
+Data Elements Used
+Component Parameter Unit
+Recharge due to Surface Design Discharge
+Cusecs
+Water Irrigation of the Outlet
+Number of Days Number
+Cropping Pattern Acres
+Data computation methodology
+Recharge due to Applied Surface Water Irrigation: Recharge due to applied surface water
+irrigation is estimated based on the following formula:
+R = AD * Days * RFF
+SWI
+Where:
+R = Recharge due to applied surface water irrigation
+SWI
+AD = Average Discharge
+Days = Number of days water is discharged to the Fields
+RFF = Return Flow Factor
+In case discharge data is not available below formula is used to calculate R :
+SWI
+R = [((Irrigation Area Under Paddy * Crop Water Requirement for Paddy) + (Irrigation
+SWI
+Area under Non-Paddy * Crop Requirement for Non-Paddy)) * RFF
+Where,
+RFF = [(Irrigated Area under Paddy * Return Flow Factor for Paddy) +
+(Irrigated Area under Non-Paddy * Return Flow Factor for Non-Paddy)] /
+(Irrigated Area under Paddy + Irrigated Area under Non-Paddy)
+8
+
+PAGE 16:
+2.1.4 Recharge from Other Sources - Canal Seepage
+Introduction
+Canals store water till the time it is disbursed for irrigation, industrial and domestic
+purposes. During this time the water seeps down the ground, contributing to the ground
+water recharging. Canals are of two types – Lined and Unlined.
+Data Elements Used
+Component Parameter Unit
+Recharge from Canal
+Reach Length Meters
+Seepages
+Full Supply Length Meters
+Side Angle Degrees
+Base Width Meters
+Number of Days Number
+Data computation methodology
+Recharge due to canals is estimated based on the following formula:
+R = WA * SF * Days
+C
+Where:
+R = Recharge Due to Canals
+C
+WA = Wetted Area (calculated as Wetted Perimeter X Length of
+Canal Reach)
+SF = Seepage Factor
+Days = Number of Canal Running Days
+9
+
+PAGE 17:
+2.1.5 Recharge from Other Sources - Tanks and Ponds
+Introduction
+During monsoon season, water get stored in Tanks and Ponds. This stored water
+contributes to the ground water recharge based on the amount of water stored and number
+of days water is stored in these structures.
+Data Elements Used
+Component Parameter Unit
+Recharge from Tanks Hectares
+Water Spread Area
+and Ponds
+Number of Days Numbers
+Data computation methodology
+Recharge due to Tanks & Ponds is estimated based on the following formula:
+R = AWSA * R * RF
+TP
+Where:
+R = Recharge due to Tanks & Ponds
+TP
+AWSA= Average Water Spread Area
+N = Number of days Water is available in the Tank/Pond
+RF = Recharge Factor (As per GEC 2015, recommended RF = 1.4
+mm / day)
+10
+
+PAGE 18:
+2.1.6 Recharge from Other Sources - Water Conservation
+Structures
+Introduction
+Similarly, like Tanks and Ponds, Artificial Structures for Water Conservation, stores water in
+monsoon season which then contributes to ground water recharge.
+Data Elements Used
+Component Parameter Unit
+Recharge due to Water Gross Storage Hectare Meters
+Conservation Structure
+Number of Refills Number
+Data computation methodology
+Recharge due to Water Conservation Structures is estimated based on the following
+formula:
+R = GS * RF
+WCS
+Where:
+R = Recharge due to Water Conservation Structures
+WCS
+GS = Gross Storage = Storage Capacity * No. of Fillings
+RF = Recharge Factor (As per GEC 2015 recommendations,
+RF = 40% of Gross Storage during a year which means 20% during
+monsoon season and 20% during non-monsoon Season)
+11
+
+PAGE 19:
+2.1.7 Recharge from Other Sources – Stream Channels
+Introduction
+Streams following through an area also contributes to the Ground Water recharge.
+Data computation methodology
+Recharge from Stream Channels is estimated using Darcy’s Law.
+Q = K * [(h2-h1)/L] * A
+Where:
+K = Coefficient of Permeability / Hydraulic Conductivity
+h1 = Head of the river
+h2 = Head at the Ground Water level
+L = Length of the river which contribute to recharge
+A = Area of cross-section
+2.1.8 Recharge from Other Sources - Pipelines
+Introduction
+Because of the water supply schemes, Pipelines are used for transporting water for
+domestic and industrial purpose in Urban area. Leakages from these pipelines are huge in
+some areas and contribute to ground water recharge.
+Data Elements Used
+Component Parameter Unit
+Pipelines Water supply Hectare Meters
+through pipeline
+Number of days Number
+water is supplied
+12
+
+PAGE 20:
+Data computation methodology
+Recharge from pipelines (P ) is estimated based on the description given in GEC 2015:
+ipelines
+R = 0.5 * (Water Supply through pipelines * Percentage losses/100) * Weighted
+Pipelines
+Infiltration factor * Number of Days water is supplied through pipelines
+2.1.9 Recharge from Other Sources - Sewage/Flash floods
+Introduction
+Seepages from the sewerages also contribute to recharge. Water which gets logged due to
+flash floods (happening due to heavy rainfall in a short period of time) also contribute to
+ground water recharge.
+Data computation methodology
+Recharge from Sewage/Flash Floods (R ) is estimated based on the
+Sewage/Flash Floods
+description given in GEC 2015:
+R = WP * SF * Length * Days
+Sewage/Flash Floods
+Where:
+WP = Wetted Perimeter
+SF = Seepage Factor
+Days = Number of Days
+13
+
+PAGE 21:
+2.2 Inflows and Outflows
+Environmental Flows consists of Vertical inter Aquifer Flow, Lateral Flow along the aquifer
+system, Transpiration, Evaporation and Baseflow.
+2.2.1 Vertical Inter Aquifer Flow
+Introduction
+In areas where more than one aquifer is present, there is a possibility that either of ground
+water flow between the aquifers which is known as Vertical Inter Aquifer Flow. Vertical
+aquifer interflow is calculated using Darcy’s law
+Data computation methodology
+This is calculated using Darcy’s Law:
+Q = HC * [∆h/T] * A
+Where,
+HC = Hydraulic Conductivity
+∆h = Average Change in Head
+T = Thickness of Aquitard
+A = Area of the zone
+2.2.2 Lateral flow along the aquifer system (throughflow)
+Introduction
+In Unless and until the assessment unit is a hydrological unit with sealed boundaries, there
+is always a possibility of ground water movement across the boundaries. Wherever the
+assessment unit are blocks, there will be a ground water flow across the boundaries. This
+flow of ground water between the aquifers is known as Lateral Flow Lateral Flow is
+calculated using Darcy’s law.
+14
+
+PAGE 22:
+Data computation methodology
+This is calculated using Darcy’s Law:
+Q = T * [∆h/Distance] * L
+Where,
+T = Transmissivity
+∆h = Up Contour - Down Contour
+Distance = Distance between two contours on ground
+L = Length of the section
+2.2.3 Transpiration
+Introduction
+Transpiration normally takes place from the ground water reservoir if the roots reach the
+ground water table. If the water table is deep below, ground water cannot be lost through
+transpiration. But in situations where the roots extend up to the capillary rise of ground
+water levels, it will lead to transpiration.
+Data computation methodology
+This is calculated as:
+Transpiration = A * TR * Days * (RD + CR - GWL) / (RD + CR)
+Where,
+A = Area
+TR = Transpiration Rate
+RD = Average Root Depth
+CR = Capillary Rise
+GWL = Ground Water Level
+15
+
+PAGE 23:
+2.2.4 Evaporation
+Introduction
+Evaporation normally takes place from surface water bodies. As the ground water is not
+exposed to surface, there is a less possibility for evaporation from ground water bodies. But
+in situations where the ground water levels are less than the capillary rise of the aquifer
+material, it will lead to evaporation.
+Data computation methodology
+This is calculated as:
+Evaporation = A * ER * Days * (CR - GWL)/CR
+Where,
+A = Area
+ER = Evaporation Rate
+CR = Capillary Rise
+GWL = Ground Water Level
+2.2.5 Evapotranspiration
+Introduction
+Sometimes it will be difficult to get evaporation and transpiration rates separately. It may be
+possible to get a single rate of evapotranspiration which is the cumulative effect of
+evaporation and transpiration. In these situations, instead of using two terms viz.
+evaporation and transpiration in the equation only one term is used i.e. Evapotranspiration.
+Data computation methodology
+This is calculated as:
+Evapotranspiration = A * ETR * Days * (RD + CR - GWL) / (RD + CR)
+Where,
+A = Area
+ETR = Evapotranspiration Rate
+16
+
+PAGE 24:
+RD = Average Root Depth
+CR = Capillary Rise
+GWL = Ground Water Level
+2.2.6 Baseflow
+Introduction
+Even though the aquifers are underdeveloped, the water levels will not rise to ground level.
+The reason for this is base flow.
+Data computation methodology
+Baseflow is calculated at Stream Gauge discharge:
+If Spell Number is 0, then.
+Baseflow = Stream Discharge
+Else
+Baseflow = Discharge at Start day in the spell + Day Number in the Spell * Slope of
+Discharge Straight line of the Spell
+Where,
+Stream Discharge = Average of 5 years of Daily Stream Discharge
+data
+Slope of Discharge Straight line of the Spell = (Discharge at End day –
+Discharge at State day) / (Number of Days)
+2.2.7 Environmental Flows
+Introduction
+The Unaccounted Natural Discharges are estimated based on the method used for
+calculating rainfall recharge in monsoon season. If the rainfall recharge is computed using
+water table fluctuation method,5% of the Total Annual Ground Water Recharge is taken as
+unaccounted Natural discharges else it is 10%of the Total Annual Ground Water Recharge.
+17
+
+PAGE 25:
+2.3 Annual Extractable Ground Water Resource
+Introduction
+The Total Annual Ground Water Recharge cannot be utilized for human consumption as
+there are some ecological commitments to be fulfilled before the extractable resources is
+defined. Therefore, ground water base flow contribution limited to the ecological flow of the
+river should be determined which will be deducted from Annual Ground Water Recharge to
+determine Annual Extractable Ground Water Resources (AEGR).
+Data computation methodology
+AEGR = TGWR - ND
+Where,
+AEGR = Annual Extractable Ground Water Resources
+TGWR = Total Ground Water Recharge
+ND = Natural Discharges
+2.4 Ground Water Extraction
+Ground water draft or extraction can be assessed as follows:
+GE = GE + GE + GE
+ALL DOM IRR IND
+Where,
+GE = Ground water extraction for all uses
+ALL
+GE = Ground water extraction for domestic uses
+DOM
+GE = Ground water extraction for irrigation uses
+IRR
+GE = Ground water extraction for industrial uses
+IND
+18
+
+PAGE 26:
+2.4.1 Extraction for Domestic Use
+Introduction
+Ground water which is extracted for domestic use can be estimated based on well census
+method or requirement method.
+Data Elements Used
+Component Parameter Unit
+Ground Water Extraction Well Census Number
+Number of days Number
+Population Number
+Consumptive Litres per capita per
+Requirement day
+Data computation methodology
+Ground Water Extraction for Domestic Use can be calculated in 2 ways:
+Unit Draft Method: Formula for Unit Draft Method is:
+GE = Unit Draft * Wells
+DOM
+Where,
+Unit Draft = Draft per well
+Wells = Number of Wells used for domestic purpose
+Consumptive Use Method: Formula for Consumptive Use Method is:
+GE = Population * Consumptive Requirement * Lg
+DOM
+Where,
+Consumptive Requirement = Per Capita Daily Water Requirement
+(lpcd)
+Lg = Fractional Load on Ground Water for Domestic Water Supply
+19
+
+PAGE 27:
+2.4.2 Extraction for Irrigation Use
+Introduction
+One of the main sources of water is ground water on which many farmers depends for
+irrigation. This can be estimated based on Well Census Method, Crop Water Requirement
+Method or Power Consumption Method.
+Data Elements Used
+Component Parameter Unit
+Ground Water Extraction Well Census Number
+Number of days Number
+Cropping Pattern Acres
+Power Consumed Kilo Watt Hours
+Data computation methodology
+Ground Water Extraction for Irrigation Use can be calculated in 3 ways:
+Unit Draft Method: Formula for Unit Draft Method is:
+GE = Unit Draft * Wells
+IRR
+Where,
+Unit Draft = Unit Draft per well
+Wells = Number of Wells used for irrigation purpose
+Crop Water Requirement Method: Formula for Crop Water Requirement Method is:
+GE = (Crop Water Requirement * Crop Area) / 1000
+IRR
+Power Consumption Method: Formula for Power Consumption Method is:
+GE = Extraction * Power Units
+IRR
+Where,
+Extraction = Extraction per unit power consumption
+Power Units = Number of units of power consumed for agricultural
+pump
+20
+
+PAGE 28:
+2.4.3 Extraction for Industrial Use
+Introduction
+Most industries, especially in the manufacturing field require a significant amount of water
+to produce goods. Due to the continuous flow of water, ground water provides ongoing
+functioning of the industries for a sustainable production.
+Data Elements Used
+Component Parameter Unit
+Ground Water Extraction Well Census Number
+Number of days Number
+Number of Number
+Industrial Units
+Data computation methodology
+Ground Water Extraction for Industrial Use can be calculated in 2 ways:
+Unit Draft Method: Formula for Unit Draft Method is:
+GE = Unit Draft * Wells
+IND
+Where,
+Unit Draft = Unit Draft per well
+Wells = Number of Wells used for industrial purpose
+Consumptive Use Method: Formula for Consumptive Use Method is:
+GE = Number of industrial units * Unit Water Consumption * Lg
+IND
+Where,
+Lg = Fractional Load on Ground Water for Domestic Water Supply
+21
+
+PAGE 29:
+2.5 Stage of Ground Water Extraction (%)
+Introduction
+To define a particular area in terms of Ground Water, we use stage of extraction. It defines
+the amount of water extracted from total extractable ground water resources and is
+expressed in percentage.
+Data computation methodology
+The stage of ground water extraction is calculated as follows:
+Stage of Extraction (%) = (GE)/(AEGR)*100
+Where,
+GE = Existing Gross Ground Water Extraction from all uses
+AEGR = Annual Extractable ground Water Resources
+2.6 Categorization of the Assessment Unit
+Introduction
+Based on Stage of Extraction we categorize the area into 4 categories SAFE, SEMI-
+CRITICAL, CRITICAL and OVER EXPLOITED. The purpose of this categorization is to find
+out over exploited and non-exploited areas for planning actions regarding ground water
+resources.
+Data computation methodology
+Based on Stage of Ground Water Extraction, assessment units into 4 categories:
+ SAFE
+ SEMI-CRITICAL
+ CRITICAL
+ OVER-EXPLOITED
+The criteria for categorization of Assessment units will be:
+Stage of Extraction (%) Categorization
+0 to <= 70 SAFE
+>70 to <=90 SEMI-CRITICAL
+>90 to <= 100 CRITICAL
+>100 OVER-EXPLOITED
+22
+
+PAGE 30:
+2.7 Allocation of Ground Water Resource for Utilization
+Introduction
+The Annual Extractable Ground Water Resources are to be apportioned between domestic,
+industrial and irrigation uses. This requirement has to be based on population as projected
+for the year 2025, per capita requirement of water for domestic use, and relative load on
+ground water for urban and rural water supply.
+Data computation methodology
+The Annual Extractable Ground Water Resources follow the following empirical relation:
+Alloc = 22 X N X Lg (mm/year)
+Where,
+Alloc = Allocation for domestic water requirement
+N = population density in the unit in thousands per sq. km.
+Lg = fractional load on ground water for domestic water supply (<1.0)
+It is assumed that the requirement of water for domestic use is 60 lpcd per head.
+2.8 Net Annual Ground Water Availability
+Introduction
+The water available for future use is obtained by deducting the allocation for domestic use
+and current extraction for Irrigation and Industrial uses from the Annual Extractable Ground
+Water Recharge. The resulting ground water potential is termed as the Net Annual Ground
+Water Availability for future use.
+Data computation methodology
+Net Annual Ground Water Availability is computed as:
+Net Annual Ground Water Availability = Total Annual Ground Water Recharge –
+Unaccounted Natural Discharges
+23
+
+PAGE 31:
+2.9 In-Storage Unconfined Ground Water Resources
+Introduction
+Static Ground Water Resources of an area are the resources which remain available below
+the dynamic zone of water table fluctuation. This is not replenished every year and
+extracting this water is called ground water mining.
+Data Elements Used
+Component Parameter Unit
+In Storage Resources of Area Hectares
+Unconfined Aquifer
+Bottom of Dynamic Meters
+Zone
+Bottom of Meters
+unconfined
+Aquifer
+Data computation methodology
+In-Storage Ground Water Resources can be expressed as follows:
+SGWR = A * (Z2 - Z1) * SY
+Where,
+SGWR = Static or In-Storage Ground Water Resources
+A = Area of the Assessment Unit
+Z2 = Bottom of Unconfined Aquifer
+Z1 = Pre-monsoon water level
+SY = Specific Yield in the Zone of static ground water resources
+24
+
+PAGE 32:
+2.10 In-Storage Confined Aquifer Water Resources
+Introduction
+Confined aquifers consist of an impermeable dirt/rock layer which prevents water from
+seeping into the aquifer from the ground surface located above. Instead, water seeps into
+confined aquifers from place where the impermeable layer does not exist. Assessment of
+ground water resources for confined aquifers assumes crucial importance since over-
+exploitation of these aquifers may lead to far more detrimental consequences than to those
+of shallow unconfined aquifers.
+Data Elements Used
+Component Parameter Unit
+In Storage Resources of Area Hectares
+Confined Aquifer
+Pre monsoon Meters
+Piezometric head
+Post monsoon Meters
+Piezometric head
+Bottom of Top Meters
+Confining Layer
+Data computation methodology
+Confined Aquifer Water Resources can be expressed as follows:
+Q = A * S * ∆h = A * S * (hPRE – h0)
+Confined
+Where,
+Q = In storage Ground Water Resource of Confined Aquifer
+Confined
+A = Areal extent of the confined aquifer
+S = Storativity
+∆h = Change in Piezometric head
+h0 = Bottom level of the top confining layer
+hPRE = Piezometric head during pre-monsoon period
+25
+
+PAGE 33:
+If the confined aquifer is not being exploited for any purpose, the dynamic and static
+resources of the confined aquifer need not be estimated separately. Instead, the in
+storage of the aquifer can be computed using the following formula.
+Q = A * S * ∆h = A * S * (hPOST – h0)
+Confined
+Where,
+Q = In storage Ground Water Resource of Confined Aquifer
+Confined
+A = Areal extent of the confined aquifer
+S = Storativity
+∆h = Change in Piezometric head
+hPOST = Piezometric head during post-monsoon period
+h0 = Bottom of the Top Confining Layer
+26
+
+PAGE 34:
+2.11 Dynamic Confined Aquifer Water Resources
+Data Elements Used
+Component Parameter Unit
+Dynamic Resources of Area Hectares
+Confined Aquifer
+Pre monsoon Meters
+Piezometric head
+Post monsoon Meters
+Piezometric head
+Data computation methodology
+Confined Aquifer Water Resources can be expressed as follows:
+Q = A * S * ∆h = A * S * (hPOST – hPRE)
+Confined
+Where,
+Q = Dynamic Ground Water Resource of Confined Aquifer
+Confined
+A = Areal extent of the confined aquifer
+S = Storativity
+∆h = Change in Piezometric head
+hPOST =Piezometric head during post-monsoon period
+hPRE = Piezometric head during pre-monsoon period
+27
+
+PAGE 35:
+2.12 In-Storage Semi-Confined Aquifer Water Resources
+Introduction
+An aquifer which is partially confined by soil layers of low permeability through which
+recharge and discharge can still occur. Unless and until, it is well studied that the recharge
+to this is not computed either in the over lying unconfined aquifer or underlying/overlying
+semi confined aquifers, it should not be assessed separately.
+Data Elements Used
+Component Parameter Unit
+In Storage Resources of Area Hectares
+Semi-Confined Aquifer
+Pre monsoon Meters
+Piezometric head
+Post monsoon Meters
+Piezometric head
+Bottom of Top Meters
+Confining Layer
+Data computation methodology
+Semi-Confined Aquifer Water Resources can be expressed using the same formula as
+in Confined Aquifer Water Resources:
+Q = A * S * ∆h = A * S * (ht – h0)
+Semi - Confined
+Where,
+Q = In storage Ground Water Resource of Semi - Confined
+Semi - Confined
+Aquifer
+A = Areal extent of the semi-confined aquifer
+S = Storativity
+∆h = Change in Piezometric head
+h0 = Bottom level of the top confining layer
+hPRE = Piezometric head at any particular time
+28
+
+PAGE 36:
+2.13 Dynamic Semi-Confined Aquifer Water Resources
+Data Elements Used
+Component Parameter Unit
+Dynamic Resources of Area Hectares
+Semi-Confined Aquifer
+Pre monsoon Meters
+Piezometric head
+Post monsoon Meters
+Piezometric head
+Data computation methodology
+Semi-Confined Aquifer Water Resources can be expressed as follows:
+Q = A * S * ∆h = A * S * (hPOST – hPRE)
+Semi - Confined
+Where,
+Q = Dynamic Ground Water Resource of Semi – Confined
+Semi - Confined
+Aquifer
+A = Areal extent of the semi-confined aquifer
+S = Storativity
+∆h = Change in Piezometric head
+hPOST = Piezometric head during post-monsoon period
+hPRE = Piezometric head during pre-monsoon period
+29
+
+PAGE 37:
+2.14 Quality Tagging
+Quality assessment of ground water is equally important as the quantity assessment. The
+major sources of quality concern are salinity, fluoride, and arsenic. It can vary depending
+on the area also. If the particular parameter is influencing an area in mappable units then
+the parameter should be tagged to the assessment subunit. Apart from salinity, fluoride and
+arsenic, if there is any other parameter, that is also captured in this.
+2.15 Additional Potential Resource
+2.15.1 Spring Discharge
+Introduction
+Spring discharge constitutes an additional source of ground water in hilly areas which
+emerges at the places where ground water level cuts the surface topography.
+Data computation methodology
+Potential ground water resource due to springs can be expressed as follows:
+Potential Resources (Springs) = Q * No of days
+Where,
+Q = Spring Discharge
+No of days = Number of days spring yields
+2.15.2 Waterlogged areas and shallow water table
+Introduction
+In the area where the ground water level is less than 5 m below ground level or in
+waterlogged areas, the resources up to 5 m below ground level are potential and are used
+in addition to the annual recharge in the area.
+30
+
+PAGE 38:
+Data Elements Used
+Component Parameter Unit
+Waterlogged and shallow Depth to water Meters
+water table table below ground
+surface
+Area of shallow Hectares
+water table zone
+Specific Yield Fraction
+Data computation methodology
+Potential ground water resource in shallow water table areas can be expressed as
+follows:
+Potential Resources (Waterlogged/Shallow Water Table) = (5-D) * A * SY
+Where,
+D = Depth to water table below ground surface in pre-monsoon
+period in shallow aquifers
+A = Area of shallow water table zone
+SY = Specific Yield
+2.15.3 Flood Prone
+Introduction
+Ground water recharge from a flood plain is calculated considering areal extent of flood
+plain, Retention period of flood and Type of sub-soil strata and silt charge in the river water
+which gets deposited and controls seepage.
+Data Elements Used
+Component Parameter Unit
+Flood Prone Number of Days Number
+Flood Prone Area Hectare
+31
+
+PAGE 39:
+Data computation methodology
+Potential ground water resource in flood prone areas can be expressed as follows:
+Potential Resources (Flood Prone) = 1.4 * N * A/1000
+Where,
+N = No of Days Water is Retained in the Area
+A = Flood Prone Area
+2.16 Coastal Areas
+Data computation methodology
+Coastal Area resources can be expressed as follows:
+ΔS = A * (PostWT - PreWT) * SY
+Where,
+ΔS = Change in Ground water Storage
+A = Area of Coastal Zones
+PreWT = Water table during Pre-monsoon = RL of GL – water level
+during pre-monsoon season in mbgl
+PostWT = Water table during Post-monsoon = RL of GL – water level
+during post-monsoon season in mbgl
+SY = Specific Yield
+In-storage Coastal Area resources can be expressed as follows:
+In-Storage Resources = A * (PreWT – Bottom of Aquifer) * SY
+Where,
+A = Area of Coastal Zones
+PreWT = Water table during Pre-monsoon = RL of GL – water level
+during pre-monsoon season in mbgl
+Bottom of the Aquifer is to be limited to 40*(pre monsoon water table
+32
+
+PAGE 40:
+above mean sea level)
+SY = Specific Yield
+2.17 Water Depletion Zones
+Data computation methodology
+Water Depletion zone resources can be expressed as follows:
+ΔS = A * (Pre - Post) * SY
+Where,
+ΔS = Change in Ground water Storage
+A = Area of Water Depletion Zones
+Pre = Pre - monsoon Ground water level
+Post = Post - monsoon Ground water level
+SY = Specific Yield
+2.18 Validation using GW
+2.18.1 Introduction
+Ground Water assessment is based on the Stage of Extraction which has inherent
+uncertainties. The estimation of ground water extraction is based on indirect assessment
+using factors such as electricity consumption, well census and area irrigated from ground
+water. Thus, it is very important to validate the ‘Stage of Ground Water Extraction’ with long
+term trend of ground water levels. Long term water level trends are needed for a minimum
+period of 10 years for both pre-monsoon and post-monsoon period. This data will help in
+getting the Trend of Ground Water over the years. Following table is used for validation:
+Stage of Ground Water Level Trend Observed
+Remarks
+Extraction
+<= 70% Significant decline in trend in both pre- Not acceptable and
+monsoon and post-monsoon needs reassessment
+>100% No significant decline in both pre-monsoon Not acceptable and
+and post-monsoon long term trend needs reassessment
+33
+
+PAGE 41:
+This validation is shown on Dashboard with a small green tick besides the Categorization of
+an assessment unit. Red tick indicates that the particular assessment unit needs
+reassessment.
+2.18.2 Mockups
+Figure 2: Validation using Ground Water Trend result
+34
+
+PAGE 42:
+3.0 Input Sheets and Shape File formats
+3.1 Excel Download and Upload Templates
+In order to compute data for GEC, 11 excel templates are provided for the user to fill and
+submit the data in the system for an Assessment Unit
+3.1.1 Basic Data File
+Basic Data Sheet comprises of 2 sub sheets:
+a) Basic Data which captures the information related to Recharge Worthy Area, Non-
+Recharge Worthy Area, Type of Soil, Specific Yield, Rainfall Infiltration Factor.
+Figure 3: Basic Data Template
+b) Aquifer Data which captures aquifer information of the assessment unit i.e. Principal
+Aquifer, Major Aquifer and its code.
+Figure 4: Aquifer Data Template
+35
+
+PAGE 43:
+3.1.2 Rainfall Data File
+In this sheet user can input either assessment unit wise data, Rain gauge data, IMD Grid
+data or Time series data. Based on user selection the respective sheet will be downloaded.
+a) Rainfall – Assessment Unit Data
+Figure 5: Rainfall – Assessment Unit Data Template
+b) Rainfall – Rain Gauge Data
+Figure 6: Rainfall – Rain Gauge Data Template
+c) Rainfall – IMD Grid Data
+Figure 7: Rainfall – IMD Grid Data Template
+36
+
+PAGE 44:
+d) Rainfall – Time Series Data
+Figure 8: Rainfall – Time Series Data Template
+e) Rainfall – Threshold Data
+Figure 9: Rainfall – Threshold Data Template
+3.1.3 Ground Water Well Data File
+In this sheet user can input data either assessment unit wise data, Well wise data or Time
+series data. Based on user selection the respective sheet will be downloaded.
+a) Ground Water Well – Assessment Unit Data
+Figure 10: Ground Water Well – Assessment Unit Data Template
+37
+
+PAGE 45:
+b) Ground Water Well – Well Data
+Figure 11: Ground Water Well – Well Data Template
+c) Ground Water Well – Time Series Data
+Figure 12: Ground Water Well – Time Series Data Template
+3.1.4 Recharge Data File
+Recharge Data file captures the data related to various recharge components. This file
+consists of 7 sub sheets (a to g):
+a) Surface Water Irrigation – Canal Outlet
+Figure 13: Recharge – Surface Water Irrigation – Canal Outlet Template
+38
+
+PAGE 46:
+b) Surface Water Irrigation – Crop Water Requirement
+Figure 14: Recharge – Surface Water Irrigation – Crop Water Requirement Template
+c) Canal Seepages
+Figure 15: Recharge – Canal Seepage Template
+d) Tanks & Ponds
+Figure 16: Recharge – Tanks and Ponds Template
+39
+
+PAGE 47:
+e) Water Conservation Structures
+Figure 17: Recharge – Water Conservation Structure Template
+f) Ground Water Irrigation
+Figure 18: Recharge – Ground Water Irrigation Template
+40
+
+PAGE 48:
+3.1.5 Draft Data File
+Draft file collects ground water extraction data for various uses. This file consists of 6 sub
+sheets (a to f):
+a) Domestic Unit Draft
+Figure 19: Draft – Domestic Unit Draft Template
+b) Domestic Consumptive Use Method
+Figure 20: Draft – Domestic Consumptive Use Template
+41
+
+PAGE 49:
+c) Irrigation Unit Draft
+Figure 21: Draft – Irrigation Unit Draft Template
+d) Irrigation Power Consumption
+Figure 22: Draft – Irrigation Power Consumption Template
+e) Industrial Unit Draft
+Figure 23: Draft – Industrial Unit Draft Template
+42
+
+PAGE 50:
+f) Industrial Consumptive Use Pattern
+Figure 24: Draft – Industrial Consumptive Use Template
+3.1.6 Inflows and Outflows Data File
+This file includes data related to Vertical inter Aquifer Flow, Lateral Flow along the aquifer
+system, Transpiration, Evaporation and Baseflow:
+a) Base Flow
+Figure 25: Environmental Flows – Base Flow Template
+b) Additional Base Flow
+Figure 26: Environmental Flows – Base Flow Template
+43
+
+PAGE 51:
+c) Vertical inter Aquifer flow
+Figure 27: Environmental Flows – Vertical Inter Aquifer Flow Template
+d) Lateral Aquifer flow
+Figure 28: Environmental Flows – Lateral Aquifer Flow Template
+e) Evapotranspiration
+Figure 29: Environmental Flows – Evapotranspiration Template
+44
+
+PAGE 52:
+f) Evaporation
+Figure 30: Environmental Flows – Evaporation Template
+g) Transpiration
+Figure 31: Environmental Flows – Transpiration Template
+g) Stream Channels
+Figure 32: Environmental Flows – Stream Channels Template
+45
+
+PAGE 53:
+3.1.7 Additional Potential Resources Data File
+a) Shallow Water Areas
+Figure 33: Additional Potential Resources – Shallow Water Area Template
+b) Flood Prone Areas
+Figure 34: Additional Potential Resources – Flood Prone Area Template
+c) Spring Discharges
+Figure 35: Additional Potential Resources – Spring Discharge Template
+46
+
+PAGE 54:
+3.1.8 Resources of Confined and Semi-Confined Aquifer Data
+File
+Resources of Confined and Semi-Confined Aquifer data file captures data related to
+Confined Aquifer and Semi-Confined Aquifer
+Confined Aquifer
+Figure 36: Resources of Confined and Semi-Confined Aquifer – Confined Aquifer Template
+Semi-Confined Aquifer
+Figure 37: Resources of Confined and Semi-Confined Aquifer – Semi-Confined Aquifer Template
+3.1.9 Urban Area Resource – Pipelines and Sewages
+Figure 38: Urban Area Resource – Pipelines & Sewage Template
+47
+
+PAGE 55:
+3.1.10 Unconfined Dynamic Aquifer Other Details
+Figure 39: Unconfined Dynamic Aquifer Other Details Template
+3.1.11 Coastal Areas
+Figure 40: Coastal Areas Template
+3.1.12 Water Depletion Zones
+Figure 41: Water Depletion Zones Template
+48
+
+PAGE 56:
+3.2 Form Inputs
+User can also submit the data using form inputs for a particular Assessment unit.
+3.2.1 Basic Form Input
+Basic Data Form Input comprises of 2 sub forms:
+a) Basic Data which captures the information related to Recharge Worthy Area, Non-
+Recharge Worthy Area, Type of Soil, Specific Yield, Rainfall Infiltration Factor.
+Figure 42: Basic Data Form Input
+b) Aquifer Data which captures aquifer information of the assessment unit i.e. Principal
+Aquifer, Major Aquifer and its code.
+Figure 43: Aquifer Data Form Input
+49
+
+PAGE 57:
+3.2.2 Recharge Form input
+Recharge Form Input captures the data related to various recharge components. This file
+consists of 7 sub sheets (a to g):
+a) Surface Water Irrigation – Canal Outlet
+Figure 44: Recharge – Surface Water Irrigation – Canal Outlet Form Input
+b) Surface Water Irrigation – Crop Water Requirement
+Figure 45: Recharge – Surface Water Irrigation – Crop Water Requirement Form Input
+50
+
+PAGE 58:
+c) Canal Seepages
+Figure 46: Recharge – Canal Seepage Form Input
+d) Tanks & Ponds
+Figure 47: Recharge – Tanks and Ponds Form Input
+51
+
+PAGE 59:
+e) Water Conservation Structures
+Figure 48: Recharge – Water Conservation Structure Form Input
+f) Stream Channels
+Figure 49: Recharge – Stream Channels Form Input
+g) Ground Water Irrigation
+Figure 50: Recharge – Ground Water Irrigation Form Input
+52
+
+PAGE 60:
+3.2.3 Draft Form Input
+Draft Form Input collects ground water extraction data for various uses. This file consists of
+4 sub forms (a to d):
+a) Domestic / Industrial / Irrigation Unit Draft
+This form input allows user to submit the data for all the unit drafts i.e. Domestic, Industrial
+and Irrigation Unit Draft with the help of a drop down.
+Figure 51: Draft – Unit Draft Form Input
+b) Domestic Consumptive Use Method
+Figure 52: Draft – Domestic Consumptive Use Form Input
+53
+
+PAGE 61:
+c) Irrigation Power Consumption
+Figure 53: Draft – Irrigation Power Consumption Form Input
+d) Industrial Consumptive Use Pattern
+Figure 54: Draft – Industrial Consumptive Use Form Input
+54
+
+PAGE 62:
+3.2.4 Inflows and Outflows Data File
+This file includes data related to Vertical inter Aquifer Flow, Lateral Flow along the aquifer
+system, Transpiration, Evaporation and Baseflow:
+a) Base Flow
+Figure 55: Environmental Flows – Base Flow Form Input
+b) Vertical inter Aquifer flow
+Figure 56: Environmental Flows – Vertical Inter Aquifer Flow Form Input
+55
+
+PAGE 63:
+c) Lateral Aquifer flow
+Figure 57: Environmental Flows – Lateral Aquifer Flow Form Input
+d) Evapotranspiration
+Figure 58: Environmental Flows – Evapotranspiration Form Input
+e) Evaporation
+Figure 59: Environmental Flows – Evaporation Form Input
+56
+
+PAGE 64:
+f) Transpiration
+Figure 60: Environmental Flows – Transpiration Form Input
+3.2.5 Additional Potential Resources Form Input
+a) Shallow Water Areas
+Figure 61: Additional Potential Resources – Shallow Water Area Form Input
+b) Flood Prone Areas
+Figure 62: Additional Potential Resources – Flood Prone Area Form Input
+57
+
+PAGE 65:
+a) Spring Discharges
+Figure 63: Additional Potential Resources – Spring Discharge Form Input
+3.2.6 Resources of Confined and Semi-Confined Aquifer Form
+Input
+Resources of Confined and Semi-Confined Aquifer Form Input captures data related to Confined
+Aquifer and Semi-Confined Aquifer
+Confined Aquifer
+Figure 64: Resources of Confined and Semi-Confined Aquifer – Confined Aquifer Form Input
+58
+
+PAGE 66:
+Semi-Confined Aquifer
+Figure 65: Resources of Confined and Semi-Confined Aquifer – Semi-Confined Aquifer Form Input
+3.2.7 Unconfined Dynamic Aquifer Other Details
+Figure 66: Unconfined Dynamic Aquifer Other Details Form Input
+59
+
+PAGE 67:
+3.2.8 Coastal Areas
+Figure 67: Coastal Areas Form Input
+3.2.9 Water Depletion Zones
+Figure 68: Water Depletion Zones Form Input
+60
+
+PAGE 68:
+3.3 Shape File format - Pending
+User needs to upload a State shape file with Assessment unit, hierarchy and
+geometry. This information needs to be embedded into the shape file’s attribute
+table. The shape file should be in .shp format consisting of 6 files: cpg, .dbf, prj,
+qpj, .shp, .shx. All the 6 files should be there in one folder. This folder should
+now be placed into another folder and then zipped with .zip extension. User
+needs to then upload this .zip file into the system.
+The Attribute Table of the shape file should be in the following format:
+Figure 69: Shape File Attribute Table format
+P0 will always correspond to the Assessment unit – in the above case it is
+District
+P0_ID will always be the Assessment Unit code
+P0_NAME will always be the Assessment Unit name
+P0_TYPE will always be the Assessment Unit type (District/Block/Village, etc.)
+P1 corresponds to the next higher level of hierarchy – in this case it is State
+And so on….
+UR_TYPE gives information regarding the type of assessment unit i.e. Urban or
+Rural. In this column user should enter U for Urban Assessment Units and R for
+Rural Assessment Units.
+Note: In any case the State ID should never be changed.
+61
+
+PAGE 69:
+4.0 GIS Dashboard / Homepage
+4.1 Dashboard – GIS View
+4.1.1 Introduction
+The GIS view of India GEC let the user visualize the Assessment Unit categorization
+geographically on top of other map layers. Each assessment unit is color coded based on
+the categorization (SAFE, SEMI-CRITICAL, CRITICAL and OVER-EXPLOITED). This view
+also shows data for each of the GEC component in the information panel at the right side.
+By default, the view starts at India level map with all the states showing the latest
+categorization of the assessment units.
+4.1.2 Map Layers
+Base Layers
+ Open Street Maps
+Administrative Layers
+ State
+ Assessment Unit
+Hydrological Layers
+Layers  Basin
+ Sub-Basin
+Heatmaps
+ Categorization
+ Annual Normal Rainfall
+ Annual Ground Water Recharge (Unit Map)
+ Annual Ground Water Extraction (Unit Map)
+ Aquifer Map
+4.1.3 Features
+Legends Legends provides categorical and break values of the data.
+Map Tools Tools to zoom in and out of the map
+Shows the Rainfall, Recharge, Draft, Losses, Stage of Extraction,
+Information
+DTW (bgl) and Categorization for Command Area, Non-Command
+Panel
+Area and Total Area
+Map
+Downloads the current selected map
+Download
+62
+
+PAGE 70:
+ Geo View (Admin/Basin)
+ Assessment Year
+Filters
+ Computation Type (Actual/Normal)
+ Period (Annual/Monsoon/Non-Monsoon)
+4.1.4 Mockups
+GIS View / Homepage
+Figure 70: GIS Home Page mockup
+63
+
+PAGE 71:
+Map Layers
+Figure 71: GIS View – Map Layers mockup
+64
+
+PAGE 73:
+Information Panel
+Figure 73: GIS View – Information Panel mockup
+66
+
+PAGE 74:
+4.2 Heatmap
+The Heatmaps or Choropleth maps in GIS view lets you see the various information layers
+including Categorization, Rainfall, etc. India GEC system provides 5 different heatmaps for
+visualization.
+4.2.1 Categorization
+The Categorization Heatmap shows the categorization for each assessment unit.
+Figure 74: GIS View – Categorization Heatmap
+67
+
+PAGE 75:
+4.2.2 Annual Normal Rainfall
+The Annual Normal Rainfall Heatmap allows user to see the Normal Rainfall of an
+Assessment Unit in a year.
+Figure 75: GIS View – Annual Normal Rainfall Heatmap
+68
+
+PAGE 76:
+4.2.3 Annual Ground Water Recharge (Unit Map)
+The Annual Ground Water Recharge Heatmap is a Unit Map showing user Assessment
+Unit wise Recharge divided by Recharge Worthy Area.
+Figure 76: GIS View – Annual Ground Water Recharge (Unit Map) Heatmap
+69
+
+PAGE 77:
+4.2.4 Annual Ground Water Extraction (Unit Map)
+The Annual Ground Water Extraction Heatmap is a Unit Map showing user Assessment
+Unit wise Extraction divided by Recharge Worthy Area.
+Figure 77: GIS View – Annual Ground Water Extraction (Unit Map) Heatmap
+70
+
+PAGE 78:
+4.2.5 Aquifer Map
+The Aquifer Map shows various aquifer distribution across whole of India.
+Figure 78: GIS View – Aquifer Heatmap
+71
+
+PAGE 79:
+5.0 MIS Dashboard
+5.1 Dashboard – MIS View
+5.1.1 Introduction
+The MIS view of India GEC let the user visualize the data for Rainfall, Recharge, Draft,
+Losses, State of Ground Water Extraction, Assessment Unit categorization in tabular
+format distributed across Command and Non-Command areas in an assessment unit. All
+the values calculated are in ha.m.
+ Command Area
+Data Items
+ Non-Command Area
+ Total Area
+ Assessment Year
+ Time Period (Annual/Monsoon/Non-Monsoon)
+Filters
+ Geo View (Administrative/Hydrological)
+ Category (Safe/Semi-
+Critical/Critical/Overexploited)
+5.1.2 Mockups
+72
+
+PAGE 81:
+5.2 Computational Popup
+User can see the calculations for each component by drilling down to the Assessment Unit
+level. Some of the popup are given below:
+Irrigation Draft Popup:
+Figure 80: MIS View – Computation Popup Sample 1
+74
+
+PAGE 82:
+Water Conservation Structure Popup:
+Figure 81: MIS View – Computation Popup Sample 2
+75
+
+PAGE 83:
+6.0 Other System Features
+6.1 Live Ground Water Dashboard
+6.1.1 Introduction
+Live Ground Water Dashboard shows the live Change in Ground Water Storage for a
+specific assessment unit. The live ground water level is fetched from the India WRIS
+website via an API.
+Change in Ground Water Storage can be expressed as follows:
+ΔS = A * (Pre – Current) * SY
+Where,
+ΔS = Change in Ground water Storage
+A = Area of Water Depletion Zones
+Pre = Pre - monsoon Ground water level
+Current = Current Ground water level
+SY = Specific Yield
+6.1.2 Mockups
+Figure 82: Live Ground Water Dashboard mockup
+76
+
+PAGE 84:
+6.2 Map comparison
+6.2.1 Introduction
+Map comparison allows user to compare the Ground water estimation done for two years.
+The GIS view shows the categorization at an assessment unit level. At the bottom there is
+an MIS View table showing the data for year 1, year 2 and also the percentage difference in
+the value between these two years. The header shows the summary of the assessment
+unit categorizations.
+6.2.2 Mockups
+Figure 83: Map Comparison mockup
+77
+
+PAGE 85:
+7.0 Reports
+The download option in MIS View allows user to download reports in 6 formats:
+7.1 Central Level Report
+Central Level Report option allows user to download the state-wise district level data for an
+assessment year, computation type and view. The data is downloaded in MIS table format.
+All the calculated values are shown in ha.m.
+Figure 84: Central Level Report – Mockup
+Figure 85: Central Level Report – Report Format
+78
+
+PAGE 86:
+7.2 State Level Report
+State Report option allows user to download the Assessment Unit-wise data for the
+selected state for an assessment year, computation type and view. The data is downloaded
+in MIS table format. All the calculated values are shown in ha.m.
+Figure 86: State Level Report – Mockup
+Figure 87: State Level Report – Report Format
+79
+
+PAGE 87:
+7.3 CGWB Format – Annexure 1 – State-wise Resources
+User can download the data in CGWB Annexure 1 format.
+Figure 88: Annexure 1 – Mockup
+Figure 89: Annexure 1 – State Resources – Report Format
+80
+
+PAGE 88:
+Figure 90: Annexure 1 – Comparison Resources – Report Format
+81
+
+PAGE 89:
+7.4 CGWB Format – Annexure 2 – District-wise Resources
+User can download the data in CGWB Annexure 2 format.
+Figure 91: Annexure 2 – Mockup
+Figure 92: Annexure 2 – Report Format
+82
+
+PAGE 90:
+7.5 CGWB Format – Annexure 3 – Categorization
+User can download the data in CGWB Annexure 3 format.
+Figure 93: Annexure 3 – Mockup
+Figure 94: Annexure 3 – Categorization – Report Format
+83
+
+PAGE 91:
+Figure 95: Annexure 3 – Comparison – Report Format
+84
+
+PAGE 92:
+7.6 CGWB Format – Annexure 4 – List of Categorization
+User can download the data in CGWB Annexure 4 format.
+Figure 96: Annexure 4 – Mockup
+Figure 97: Annexure 4 – Annexure IV A – Report Format
+85
+
+PAGE 93:
+Figure 98: Annexure 4 – Annexure IV B – Report Format
+Figure 99: Annexure 4 – Annexure IV Original – Report Format
+86
+
+PAGE 94:
+7.7 Custom Report
+Custom reports allow user to generate report for a specific assessment unit which fall under
+a certain criterion. User has an option to define ranges for Recharge Worthy Area, Annual
+Rainfall, Ground Water Recharge, Ground Water Extraction and Stage of Extraction. User
+also has an option to choose to download the report for a specific Category. Custom Report
+option is provided in the Report Download option in MIS View
+Figure 100: Customer Report – Mockup
+87
+
+PAGE 95:
+8.0 User Logins
+8.1 Introduction
+India GEC has 7 different levels of users who can submit, view and approve the data
+submitted by the Field User.
+Apart from Field User, all other users have an Approvals Tab. This tab gives the brief
+information about the Assessment Unit/State in approval process. Details such as
+assessment unit name, type and category are shown here.
+Figure 101: Pending Approvals Tab
+Figure 102: History Tab
+88
+
+PAGE 96:
+On pressing the eye icon under “Information” user can see the following details:
+a) Uploaded Excel Sheets – This shows the data sheets uploaded by the field user
+Figure 103: View Data – Uploaded Excel Sheets
+b) Computed Data – This shows the computed data which after approval will be
+shown on GIS and MIS view
+Figure 104: View Data – Computed Data
+89
+
+PAGE 97:
+c) Comments – This shows the comments given by the users while approving or
+rejecting the data
+Figure 105: View Data - Comments
+8.2 Field User Login
+8.2.1 Approvals Tab
+This tab shows the list of assessment unit for which the data computation is done and are
+ready for approvals.
+Figure 106: Field User Login – Approvals Tab
+90
+
+PAGE 98:
+8.2.2 Excel Download Tab
+In this tab, user can download the templates for various data sheets.
+Figure 107: Field User Login – Excel Download Tab
+8.2.3 Excel Upload Tab
+In this tab, user can upload the filled data sheets.
+Figure 108: Field User Login – Excel Upload Tab
+91
+
+PAGE 99:
+8.2.4 Input Form Tab
+In this tab, user can submit the data using Input Forms.
+Figure 109: Field User Login – Input Form Tab
+8.2.5 Trigger Computation Tab
+Once user has submitted the data by either of the method, user needs to trigger the
+computations for the data. As soon as the trigger gets completed the assessment units
+along with computed will appear in Approvals tab.
+Figure 110: Field User Login – Trigger Computation Tab
+92
+
+PAGE 100:
+8.2.6 Report Versions Tab
+In this tab, user can see all the reports generated till date. User can also revert back to a
+previously generated report.
+Figure 111: Field User Login – Report Versions Tab
+8.3 District Admin Login
+8.3.1 Approvals Tab
+The role of District Admin is to verify and approve the data submitted by the Field User.
+Figure 112: District Admin Login – Approvals Tab
+93
+
+PAGE 101:
+8.4 State Admin Login
+8.4.1 Approvals Tab
+This tab shows the list of assessment unit for which the data computation is done and are
+ready for approvals.
+Figure 113: State Admin Login – Approvals Tab
+8.4.2 Submit to SLC - Approvals Tab
+Once the data for each assessment unit is submitted and approved, state admin will send
+the data to SLC for further approval.
+Figure 114: State Admin Login – Approvals Tab – Submit to SLC
+94
+
+PAGE 102:
+8.4.3 State Basic Data Tab
+This is the tab where State Admin will be initializing the state by uploading the shape file of
+the state.
+Figure 115: State Admin Login – State Basic Data Tab
+8.4.4 Data upload Basic Data Tab
+This is the tab where State Admin will be initializing the state by uploading the shape file of
+the state.
+Figure 116: State Admin Login – Data Upload Tab
+95
+
+PAGE 103:
+8.4.5 Shape File Version Tab
+In this tab, user can revert back to a previously uploaded shape file.
+Figure 117: State Admin Login – Shape File Version Tab
+8.5 SLC Admin Login
+8.5.1 Approvals Tab
+The role of SLC Admin is to verify and approve the report submitted by State Admin.
+Figure 118: SLC Admin Login – Approvals Tab
+96
+
+PAGE 104:
+SLC user has been given a provision to upload the proceedings file while approving the report.
+Figure 119: SLC Admin Login – Upload Proceedings Popup
+8.6 CGWB Admin Login
+8.6.1 Approvals Tab
+The role of CGWB Admin is to verify and approve the report submitted by the SLC Admin.
+Figure 120: CGWB Admin Login – Approvals Tab
+97
+
+PAGE 105:
+8.7 CLEG Admin Login
+8.7.1 Approvals Tab
+The role of CLEG Admin is to verify and approve the report submitted by the CGWB Admin.
+Figure 121: CLEG Admin Login – Approvals Tab
+CLEG user has been given a provision to upload the proceedings file while approving the report.
+Figure 122: CLEG Admin Login – Upload Proceedings Popup
+98
+
+PAGE 106:
+8.8 Ministry Admin Login
+8.8.1 Approvals Tab
+The role of Ministry Admin is to verify and approve the report submitted by the CLEG
+Admin.
+Figure 123: Ministry Admin Login – Approvals Tab
+Ministry user has been given a provision to upload the proceedings file while approving the report.
+Figure 124: Ministry Admin Login – Upload Proceedings Popup
+99
+
+PAGE 107:
+9.0 Approval Levels
+Figure 125: Approval Levels
+100
+
+PAGE 108:
+10.0 User Journey
+User journey can be divided into 4 stages:
+Figure 126: User Journey
+10.1 Stage 1: Initialize the State
+The first step to data submission process is to initialize the state. In this stage, “State
+Admin” has to login and upload the state shape file with all its Assessment units and
+hierarchies embedded into the attribute table of the shape file. The system will extract the
+hierarchy from the shape file and pre-populate district and assessment unit name and
+codes.
+Figure 127: Shape file Upload
+101
+
+PAGE 109:
+Once shape file upload is done, State user needs to upload Rainfall and Ground Water
+Figure 128: State Data Upload
+10.2 Stage 2: Data Entry and Submit for Approval
+In Stage 2, Field user has to login and submit the data. There are two ways to submit the
+data, one is using the excel file download and upload. Another way is through form input.
+Figure 129: Excel Download
+102
+
+PAGE 110:
+Figure 130: Excel Upload
+Figure 131: Form Input
+Once done, Field user has to Trigger the data. User can either trigger for one assessment unit or he
+can trigger for the whole district at once.
+103
+
+PAGE 111:
+Figure 132: Trigger Computation
+User has to now go to the Data Submission tab and verify the computed results by clicking
+on the “View Data” icon.
+Figure 133: View Data Popup
+Once he is satisfied with the output user needs to submit the data for approval
+Figure 134: Pending Approvals
+104
+
+PAGE 112:
+10.3 Stage 3: Approval Process
+As soon as field user submit the data for approval, the computed report moves to district
+level for approval. Here the district can verify the submitted data and also the computed
+report and can either approve or reject the data. Once approve the data will move to State
+Admin. In case district admin rejects the data, it will go back to Field User for modification.
+Figure 135: District Admin Approval
+After District has approved the report it moves to State Admin for approval. State admin can again
+either reject or approve the data. In case state admin rejects the data it will go back to District
+Admin for modification. Once State Admin has approved all the assessment units, a state approval
+will be shown under “Submit to SLC” tab where user can now submit the complete stytet data to the
+State SLC committee for approval.
+Figure 136: State Admin Approval
+105
+
+PAGE 113:
+Figure 137: Submit to SLC
+Once state has approved the state level report will now move to SLC Admin login where the SLC
+committee needs to either approve or reject the whole state’s data.
+Figure 138: SLC Admin Approval
+After SLC the report moves to CGWB admin where user again can either approve or reject the
+whole state’s report
+Figure 139: CGWB Admin Approval
+106
+
+PAGE 114:
+After CGWB, the report moves to CLEG admin user for approval.
+Figure 140: CLEG Admin Approval
+After CLEG, the report moves to Ministry admin user for approval.
+Figure 141: Ministry Admin Approval
+107
+
+PAGE 115:
+10.4 Stage 4: Output on GIS and MIS View
+As soon as the approval completes, the report is published on GIS and MIS View for public
+viewing.
+Figure 142: MIS View
+Figure 143: GIS View
+108
+
+PAGE 116:
+Users also has an option to download the reports and maps.
+Figure 144: Map Download
+Figure 145: Report Download
+109
+
+PAGE 117:
+11.0 Glossary
+Heat map / Choropleth map: Representation of data in the form of a map or diagram in
+which data values are represented as colors. It gives spatial distribution of the data set.
+Ground water recharge worthy area: This is the potential area in a taken location that is
+capable of ground water recharge
+BCM: Billion Cubic Metres
+Ha.m: Hectares meters
+Lpcd: Litres per capita per day
+Units
+Rainfall: millimeter (mm)
+Area: Hectare (Ha)
+Recharge: Hectare Meter(ha.m)
+Ground Water Level: Meter(m)
+Recharge Factor: Meter/day
+Environmental Flows: Hectare Meter(ha.m)
+Annual Extractable Ground Water Resource, Net Annual Ground Water Availability for
+Future Use, In-Storage, Static Ground Water Resources, Additional Potential Resources
+under Specific Conditions, Total Ground Water Availability in Unconfined Aquifer: Hectare
+Meter (ha.m)
+Ground Water Extraction for Irrigation, Domestic and Industrial: Hectare Meter (ha.m)
+Stage of Ground Water Extraction: Percentage
+Specific Yield: Percentage
+Rainfall Infiltration Factor: Percentage
+Return Flow Factor: Percentage
+110
+
+PAGE 118:
+12.0 References
+1. GEC 2015 Methodology Document
+http://cgwb.gov.in/Documents/GEC2015_Report_Final%2030.10.2017.pdf
+2. GWRA 2017 National Compilation Report
+http://cgwb.gov.in/GW-Assessment/GWRA-2017-National-Compilation.pdf
+3. Ground Water Resource Estimation presentation by Dr. A.V.S.S.Anand
+https://www.slideshare.net/avssanand/ground-water-resources-estimation-by-gec-
+2015-methodology
+4. APGRACE
+http://apgrace.vassarlabs.com/gec%3Fstate=Andhra%20Pradesh&year=2016-2017
+111
